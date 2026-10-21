@@ -74,3 +74,4 @@ if __name__ == "__main__":
     df = build_geo_dataframe(locations, geo)
 
     df.to_csv("./geo_data.csv", index=False)
+    
