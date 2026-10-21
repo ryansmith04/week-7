@@ -1,12 +1,12 @@
 import unittest
 from loader import *
 
+
 class TestLoader(unittest.TestCase):
     """Tests for looking up locations with loader.py."""
     def setUp(self):
         """Create one geolocator for every test."""
         self.geolocator = get_geolocator()
-
 
     def test_valid_locations(self):
         """Known places should return the right coordinates and type."""
@@ -24,8 +24,6 @@ class TestLoader(unittest.TestCase):
             self.assertAlmostEqual(row["latitude"], lat, delta=0.01)
             self.assertAlmostEqual(row["longitude"], lon, delta=0.01)
             self.assertEqual(row["type"], loc_type)
-        return None
-
 
     def test_invalid_location(self):
         """A fake place should keep its name and have NA everywhere else."""
@@ -38,4 +36,3 @@ class TestLoader(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    
